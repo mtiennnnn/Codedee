@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <head>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
+    <link type="text/css" rel="stylesheet" href="{% static './css/materialize.css' %}"  media="screen,projection"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+    <title>{% block title %}{% endblock  %}</title>
+</head>
+<body>
+  <div class="main-container">
+    <nav>
+      <div class="nav-wrapper white darken-2 custom-shadow">
+        <a href="{% url 'index' %}" class="brand-logo black-text left">Codedee</a>
+        <div class="nav-elements">
+          <ul class="left">
+            <li><a href="{% url 'about' %}" class="waves-effect waves-teal {% if request.resolver_match.url_name == 'about' %}blue-text active-nav-ele{% endif %}" style="color:#6D6D6D;">About</a></li>
+            <li><a href="{% url 'ranking' %}" class="waves-effect waves-teal {% if request.resolver_match.url_name == 'ranking' %}blue-text active-nav-ele{% endif %}" style="color:#6D6D6D;">Ranking</a></li>
+            <li><a href="{% url 'problem_set' %}" class="waves-effect waves-teal {% if request.resolver_match.url_name == 'problem_set' %}blue-text active-nav-ele{% endif %}" style="color:#6D6D6D;">Problem Set</a></li>
+          </ul>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="{% url 'login' %}" class="btn-flat sign-in-float-btn waves-effect waves-light" style="text-transform: none;margin-right: -10px;">Log in</a></li>
+            <li><a href="{% url 'register' %}" class="waves-effect waves-light blue btn sign-up-btn">Register</a></li>
+          </ul>
+        </div>
+      </div>  
+    </nav>
+    <div class="mainpage-container"> 
+      <div class="main-content">
+        {%block main-content%}{% endblock%}
+      </div>
+      <div class="side-content">
+      </div>
+    </div>
+    <div class="main-nav-content">
+      {%block main-nav-content%}{% endblock%}
+    </div>
+    <div class="log-reg-form">
+      {%block log-form %}{% endblock%}
+      {%block reg-form %}{% endblock%}
+    </div>
+  </div>
+    <script type="text/javascript" src="{% static './js/materialize.js' %}"></script>
+</body>
+</html>

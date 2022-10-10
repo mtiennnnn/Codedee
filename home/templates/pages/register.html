@@ -1,0 +1,20 @@
+{% extends 'pages/index.html' %}
+
+{% block title%}Codedee - Register{% endblock %}
+
+{% block reg-form %}
+<form class="box-form" action="#" method="post">
+     {% csrf_token %}
+     
+    <h3 style="text-align:center;">Register</h3>
+    <p style="margin-bottom:-0.2px;">Username</p>
+    <input type="text" name="username" required="required">
+    <p style="margin-bottom:-0.2px;">Password</p>
+    <input type="password" name="password" required="required">
+    <p style="margin-bottom:-0.2px;">Password Confirmation</p>
+    <input type="password" name="password" required="required">
+    <p style="margin-bottom:-0.2px;">Email</p>
+    <input type="email" name="email" required="required">
+    <input type="submit" name="submit" value="Register"> 
+</form>
+{% endblock %}

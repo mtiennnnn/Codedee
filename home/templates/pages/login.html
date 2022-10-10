@@ -1,0 +1,14 @@
+{% extends 'pages/index.html' %}
+
+{% block title%}Codedee - Log in{% endblock %}
+
+{% block log-form %}
+    <form class="box-form" action="#" method="post">
+        <h3 style="text-align:center;">Log In</h3>
+        <p style="margin-bottom:-0.2px;">Username</p>
+        <input type="text" name="username" required="required">
+        <p style="margin-bottom:-0.2px;">Password</p>
+        <input type="password" name="password" required="required">
+        <input type="submit" name="submit" value="Login"> 
+    </form>
+{% endblock %}
