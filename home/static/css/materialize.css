@@ -252,7 +252,7 @@
 }
 
 .pink.darken-2 {
-  background-color: #c2185b !important;
+  background-color: #c2185b !important
 }
 
 .pink-text.text-darken-2 {
@@ -9075,7 +9075,6 @@ input[type=range]::-ms-thumb {
   float: left;
   width: 80%;
   padding-left: 40px;
-  padding-right: -40px;
 }
 
 .big-message-main-page {
@@ -9086,6 +9085,18 @@ input[type=range]::-ms-thumb {
   display: flex;
   width: 20%;
   float: right;
+}
+
+.main-nav-container {
+  padding-left: 40px;
+}
+
+.about-us-content {
+  margin-bottom: 10px;
+}
+
+.about-us-session-right {
+  margin-bottom: 0px;
 }
 
 .active-nav-ele {
