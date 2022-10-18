@@ -18,7 +18,7 @@
             <div class="nav-elements">
               <ul class="left">
                 <li><a href="{% url 'about' %}" class="waves-effect waves-teal {% if request.resolver_match.url_name == 'about' %}blue-text active-nav-ele{% endif %}" style="color:#6D6D6D;">About</a></li>
-                <li><a href="{% url 'ranking' %}" class="waves-effect waves-teal {% if request.resolver_match.url_name == 'ranking' %}blue-text active-nav-ele{% endif %}" style="color:#6D6D6D;">Ranking</a></li>
+                <li><a href="{% url 'ranking' %}" class="waves-effect waves-teal {% if request.resolver_match.url_name == 'ranking' %}blue-text active-nav-ele{% endif %}" style="color:#6D6D6D;">Rating</a></li>
                 <li><a href="{% url 'problem_set' %}" class="waves-effect waves-teal {% if request.resolver_match.url_name == 'problem_set' %}blue-text active-nav-ele{% endif %}" style="color:#6D6D6D;">Problem Set</a></li>
               </ul>
               <ul class="right hide-on-med-and-down">
@@ -30,18 +30,7 @@
         </nav>
       </div>
     <div class="mainpage-container"> 
-      <div class="main-content">
-        {%block main-content%}{% endblock%}
-      </div>
-      <div class="side-content">
-      </div>
-    </div>
-    <div class="main-nav-content">
-      {%block main-nav-content%}{% endblock%}
-    </div>
-    <div class="log-reg-form">
-      {%block log-form %}{% endblock%}
-      {%block reg-form %}{% endblock%}
+      {% block main-container-content %}{% endblock %}
     </div>
   </div>
     <script type="text/javascript" src="{% static './js/materialize.js' %}"></script>

@@ -2,6 +2,11 @@
 
 {% block title%}Codedee - Problem Set{% endblock %}
 
-{% block main-nav-content %}
-    <h2 class="big-message-main-page">Problem Set</h2>
+{% block main-container-content %}
+    <div class="main-content">
+        <h3 class="big-message-main-page">Problem Set</h3>
+    </div>
+    <div class="side-content">
+        {% include 'pages/ranking_table.html' %}
+    </div>
 {% endblock %}

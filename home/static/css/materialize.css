@@ -4773,6 +4773,10 @@ small {
   position: relative;
 }
 
+.image-author {
+  clip: rect(0px,125px,125px,0) !important;
+}
+
 .card.small .card-image, .card.medium .card-image, .card.large .card-image {
   max-height: 60%;
   overflow: hidden;
@@ -9071,10 +9075,11 @@ input[type=range]::-ms-thumb {
 }
 
 .main-content {
-  display: flex;
+  display: block;
   float: left;
   width: 80%;
   padding-left: 40px;
+  padding-right: 20px;
 }
 
 .big-message-main-page {
@@ -9082,13 +9087,43 @@ input[type=range]::-ms-thumb {
 }
 
 .side-content {
-  display: flex;
+  display: block;
   width: 20%;
   float: right;
+  margin-top: 150px;
+  padding-right: 30px;
+}
+
+.ranking-full {
+  width: 90% !important;
+  box-shadow: 0 0 5px #E1E1E1 !important;
+  font-size: 0.95em !important;
+}
+
+.ranking-table {
+  border-collapse: collapse;
+  font-size: 0.85em;
+  border-spacing: 0;
+  border-radius: 4px 4px 0 0;
+  overflow: hidden;
+  box-shadow: 0 5px 5px rgba(32,32,32,.3);
+}
+
+.ranking-table thead tr {
+  background-color: #2196F3;
+  font-weight: bold;
+}
+
+.ranking-table th, .ranking-table td {
+
+}
+
+.ranking-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3
 }
 
 .main-nav-container {
-  padding-left: 40px;
+  padding-left: 10px;
 }
 
 .about-us-content {

@@ -2,72 +2,76 @@
 
 {% block title%}Codedee - About us{% endblock %}
 
-{% block main-nav-content %}
-  <div class="main-nav-container">
-    <div class="about-us-session">
-      <h2 class="about-us-content big-message-main-page">Meet Our Team</h2>
-        <div class="about-us-card">
-            <div class="row">
-              <div class="col s12 m5">
-                <div class="card small">
-                  <div class="card-image">
-                    <img src="https://i.imgur.com/IhoO2Mu.jpeg">
-                  </div>
-                  <div class="card-content">
-                    <p>I am a very simple card. I am good at containing small bits of information.
-                    I am convenient because I require little markup to use effectively.</p>
-                  </div>
-                  <div class="card-action">
-                    <a href="#">This is a link</a>
+{% block main-container-content %}
+  <div class="main-content">
+    <div class="main-nav-container">
+      <div class="about-us-session">
+        <h3 class="about-us-content big-message-main-page">Meet Our Team</h3>
+          <div class="about-us-card">
+              <div class="row">
+                <div class="col s12 m5">
+                  <div class="card small">
+                    <div class="card-image image-author">
+                      <img src="https://i.imgur.com/fBgjza7.png"> <!-- khi thinh-->
+                    </div>
+                    <div class="card-content">
+                      <p>I'm Thinh, I love running xD.</p>
+                    </div>
+                    <div class="card-action">
+                      <a href="https://facebook.com/neverbenobodybutmyself" target="_blank" style="color:#2196F3;">My Social Media</a>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-        </div>
-    </div>
-    <div class="about-us-session">  
-        <div class="about-us-card">
-          <div class="row">
-            <div class="col s4"></div>
-            <div class="col s8 m5">
-              <h2 class="header big-message-main-page right-align">Our Mission</h2>
-              <div class="card small horizontal">
-                <div class="card-stacked">
-                  <div class="card-content">
-                    <p>I am a very simple card. I am good at containing small bits of information.</p>
+          </div>
+      </div>
+      <div class="about-us-session">  
+          <div class="about-us-card">
+            <div class="row">
+              <div class="col s5"></div>
+              <div class="col s7 m6">
+                {% comment %} <h3 class="header big-message-main-page right-align">Our Mission</h3> {% endcomment %}
+                <div class="card small horizontal">
+                  <div class="card-stacked">
+                    <div class="card-content">
+                      <p>I'm Tien. I ain't making web, web makes me.</p>
+                    </div>
+                    <div class="card-action">
+                      <a href="https://mtiennnnn.vercel.app" target="_blank" style="color:#2196F3;">My Blog</a>
+                    </div>
                   </div>
-                  <div class="card-action">
-                    <a href="#">This is a link</a>
+                  <div class="card-image">
+                    <img src="https://i.imgur.com/0HdIQCs.png">
                   </div>
-                </div>
-                <div class="card-image">
-                  <img src="https://i.imgur.com/IhoO2Mu.jpeg">
                 </div>
               </div>
             </div>
           </div>
-        </div>
-    </div>
-    <div class="about-us-session">
-        <h2 class="about-us-content big-message-main-page">Contact</h2>
-        <div class="about-us-card">
-            <div class="row">
-              <div class="col s12 m5">
-                <div class="card small">
-                  <div class="card-image">
-                    <img src="https://i.imgur.com/IhoO2Mu.jpeg">
-                  </div>
-                  <div class="card-content">
-                    <p>I am a very simple card. I am good at containing small bits of information.
-                    I am convenient because I require little markup to use effectively.</p>
-                  </div>
-                  <div class="card-action">
-                    <a href="#">This is a link</a>
+      </div>
+      <div class="about-us-session">
+          {% comment %} <h3 class="about-us-content big-message-main-page">Contact</h3> {% endcomment %}
+          <div class="about-us-card">
+              <div class="row">
+                <div class="col s12 m5">
+                  <div class="card small">
+                    <div class="card-image">
+                      <img src="https://i.imgur.com/swLQEON.png"> <!-- khi tai-->
+                    </div>
+                    <div class="card-content">
+                      <p>My name's Tai, I'm gay btw.</p>
+                    </div>
+                    <div class="card-action">
+                      <a href="https://www.youtube.com/watch?v=s2b_agblMh0" target="_blank" style="color:#2196F3;">Good Music</a>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-        </div>
+          </div>
+      </div>
     </div>
   </div>
-{% endblock %}
+  <div class="side-content">
+    {% include 'pages/ranking_table.html' %}
+  </div> 
+  
+{% endblock main-container-content%}

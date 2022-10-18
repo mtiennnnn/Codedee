@@ -1,5 +1,7 @@
 from django.urls import path, include
 from . import views
+import sys
+sys.setrecursionlimit(10000)
 
 urlpatterns = [
     path('', views.index, name='index'),
