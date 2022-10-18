@@ -9083,7 +9083,7 @@ input[type=range]::-ms-thumb {
 }
 
 .big-message-main-page {
-  color:#6D6D6D;
+  color:black !important;
 }
 
 .side-content {
