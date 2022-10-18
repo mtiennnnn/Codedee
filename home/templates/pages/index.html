@@ -18,6 +18,7 @@
             <div class="nav-elements">
               <ul class="left">
                 <li><a href="{% url 'about' %}" class="waves-effect waves-teal {% if request.resolver_match.url_name == 'about' %}blue-text active-nav-ele{% endif %}" style="color:#6D6D6D;">About</a></li>
+                <li><a href="{% url 'rules' %}" class="waves-effect waves-teal {% if request.resolver_match.url_name == 'rules' %}blue-text active-nav-ele{% endif %}" style="color:#6D6D6D;">Rules</a></li>
                 <li><a href="{% url 'ranking' %}" class="waves-effect waves-teal {% if request.resolver_match.url_name == 'ranking' %}blue-text active-nav-ele{% endif %}" style="color:#6D6D6D;">Rating</a></li>
                 <li><a href="{% url 'problem_set' %}" class="waves-effect waves-teal {% if request.resolver_match.url_name == 'problem_set' %}blue-text active-nav-ele{% endif %}" style="color:#6D6D6D;">Problem Set</a></li>
               </ul>

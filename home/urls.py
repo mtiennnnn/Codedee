@@ -6,6 +6,7 @@ sys.setrecursionlimit(10000)
 urlpatterns = [
     path('', views.index, name='index'),
     path('about/', views.about, name='about'),
+    path('rules/', views.rules, name='rules'),
     path('login/', views.login, name='login'),
     path('register/', views.register, name='register'),
     path('ranking/', views.ranking, name='ranking'),
