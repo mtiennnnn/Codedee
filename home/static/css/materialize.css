@@ -9058,8 +9058,8 @@ input[type=range]::-ms-thumb {
 .sign-up-btn {
   text-transform: none;
   font-weight: bold;
-  padding-right: 25px;
-  padding-left: 25px;
+  margin-right: 25px;
+  margin-left: 25px;
   border-radius: 4px;
 }
 
@@ -9067,7 +9067,6 @@ input[type=range]::-ms-thumb {
   text-transform: none !important;
   font-weight: bold;
   color:#2196F3;font-weight:bold;
-  margin-right: -10px;
 }
 
 .mainpage-container {

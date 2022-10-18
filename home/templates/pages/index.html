@@ -10,14 +10,24 @@
     <title>{% block title %}{% endblock  %}</title>
 </head>
 <body>
+
   <div class="main-container">
 
       {% include 'pages/navbar.html'%}
+
+      {% if messages %}
+      <ul class="messages">
+          {% for message in messages %}
+          <li>{{ message }}</li>
+          {% endfor %}
+      </ul>
+      {% endif %}
       
     <div class="mainpage-container"> 
       {% block main-container-content %}{% endblock %}
     </div>
   </div>
-    <script type="text/javascript" src="{% static './js/materialize.js' %}"></script>
+        
+  <script type="text/javascript" src="{% static './js/materialize.js' %}"></script>
 </body>
 </html>

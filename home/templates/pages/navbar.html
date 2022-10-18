@@ -3,16 +3,25 @@
       <div class="nav-wrapper white darken-2 custom-shadow">
         <a href="{% url 'index' %}" class="brand-logo black-text left">Codedee</a>
         <div class="nav-elements">
+
           <ul class="left">
             <li><a href="{% url 'about' %}" class="waves-effect waves-teal {% if request.resolver_match.url_name == 'about' %}blue-text active-nav-ele{% endif %}" style="color:#6D6D6D;">About</a></li>
             <li><a href="{% url 'rules' %}" class="waves-effect waves-teal {% if request.resolver_match.url_name == 'rules' %}blue-text active-nav-ele{% endif %}" style="color:#6D6D6D;">Rules</a></li>
             <li><a href="{% url 'ranking' %}" class="waves-effect waves-teal {% if request.resolver_match.url_name == 'ranking' %}blue-text active-nav-ele{% endif %}" style="color:#6D6D6D;">Rating</a></li>
             <li><a href="{% url 'problem_set' %}" class="waves-effect waves-teal {% if request.resolver_match.url_name == 'problem_set' %}blue-text active-nav-ele{% endif %}" style="color:#6D6D6D;">Problem Set</a></li>
           </ul>
+
           <ul class="right hide-on-med-and-down">
+
+            {% if request.user.is_authenticated %}
+            <li><a href="{% url 'profile' request.user.username %}" class="btn-flat sign-in-float-btn waves-effect waves-light" style="text-transform: none;margin-right: -10px;">{{request.user.username}}</a></li>
+            <li><a href="{% url 'logout' %}" class="waves-effect waves-light blue btn sign-up-btn">Log out</a></li>
+            {% else %}
             <li><a href="{% url 'login' %}" class="btn-flat sign-in-float-btn waves-effect waves-light" style="text-transform: none;margin-right: -10px;">Log in</a></li>
             <li><a href="{% url 'register' %}" class="waves-effect waves-light blue btn sign-up-btn">Register</a></li>
+            {% endif %}
           </ul>
+
         </div>
       </div>  
     </nav>
