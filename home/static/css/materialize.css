@@ -9123,7 +9123,7 @@ input[type=range]::-ms-thumb {
 }
 
 .main-nav-container {
-  padding-left: 10px;
+  /* padding-left: 10px; */
 }
 
 .about-us-content {
