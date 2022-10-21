@@ -9070,7 +9070,9 @@ input[type=range]::-ms-thumb {
 }
 
 .mainpage-container {
-  margin-top: 50px;
+  /* margin-top: 50px; */
+  color: #544F6C;
+  font-weight: 500;
 }
 
 .main-content {
@@ -9082,7 +9084,9 @@ input[type=range]::-ms-thumb {
 }
 
 .big-message-main-page {
-  color:black !important;
+  color:#130B43 !important;
+  font-weight: 700;
+  font-size: 35px;
 }
 
 .side-content {
@@ -9127,6 +9131,10 @@ input[type=range]::-ms-thumb {
 
 .about-us-content {
   margin-bottom: 10px;
+}
+
+.OurTeam-Message {
+  margin-bottom: 20px;
 }
 
 .about-us-session-right {
@@ -9195,4 +9203,57 @@ input[type=range]::-ms-thumb {
 
 .Closer {
   margin-bottom: -50px;
+}
+
+.header {
+  padding: 50px 0 0 40px;
+  background: #FAFAFF;/*#FAFAFF !important;*/
+  line-height: 90px;
+}
+
+.home-heading-text {
+  font-weight: 900;
+  font-size: 48px;
+}
+
+.header-btn {
+  text-transform: none;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 0 32px 0 32px;
+  box-shadow: 5px 8px lightslategrey;
+  margin-right: 24px;
+}
+
+.border-btn {
+  border: 1px solid #2196F3;
+  box-shadow: 5px 8px lightslategrey;
+}
+
+.header .motivation-quote {
+  text-align: center;
+  font-style: italic;
+  font-size: 15px;
+  color: #130B43;
+}
+
+.main-landing-page-content {
+  padding: 0 0 0 40px;
+  line-height: 200%;
+}
+
+.landing-page-collapsible-header {
+  color: #130B43;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.mathematics {
+  font-style: italic; color:none;
+}
+
+.header-content .phatlebucac {
+  width: 522px;
+  height: 402px;
 }

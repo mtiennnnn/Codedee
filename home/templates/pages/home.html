@@ -3,11 +3,55 @@
 {% block title%}Codedee - Main Page{% endblock %}
 
 {% block main-container-content %}
-    <div class="main-content">
-        <h3 class="big-message-main-page">Coding Platform<br>for Noobiez</h3>
+    <div class="header">
+        {% comment %} <h3 class="big-message-main-page home-heading-text">Coding Platform for Noobiez.</h3> {% endcomment %}
+        <div class="header-content">
+           <div class="row">
+                <div class="col s7">
+                    <h3 class="big-message-main-page home-heading-text">Coding Platform<br>for Noobiez.</h3>
+                    <h5 class="home-heading-content">THE BEST (actually worst) CODING PLATFORM U'VE EVER SEEN, PROVIDE 69 (xD) LANGUAGES (i know u only know about 3 of them lol) COME WITH US</h5>
+                    <a href={% url 'register' %} class="waves-effect waves-light blue btn-large header-btn">Sign up now</a>
+                    <a class="waves-effect waves-light white blue-text btn-large header-btn border-btn">Rick rolled</a>
+                </div>
+                <div class="col s5">
+                    <img class="phatlebucac" src="https://i.imgur.com/s99uyOf.png"> <!-- hinh lam tren may PL-->
+                    {% comment %} <img src="https://i.imgur.com/WZievSg.png"> <!-- hinh hack duoc tren mang--> {% endcomment %}
+                </div>
+                <div class="col s12 motivation-quote">
+                    "If you can't do something, just quit, noone will help u lol."
+                </div>
+            </div> 
+        </div>
     </div>
-    <div class="side-content">
-        {% include 'pages/ranking_table.html' %}
+    <div class="main-landing-page-content">
+        <div class="row">
+            <div class="col s6">
+                
+                <h3 class="big-message-main-page">No more than 10 coding exercises waiting for you (MONO).</h3>
+                
+                some divider
+                
+                <h5>We have amazing coding problems provided by difficulty and have a funny explaination that build your understanding of concepts (or not).</h5>
+            
+                <ul class="collapsible popout">
+                    <li>
+                      <div class="collapsible-header landing-page-collapsible-header"><i class="material-icons">child_care</i>Baby Implementation</div>
+                      <div class="collapsible-body"><span>"Contestant who earns a score equal to or greater than the k-th place finisher's score will advance to the next round, as long as the contestant earns a positive score..." — an excerpt from contest rules.</span></div>
+                    </li>
+                    <li>
+                      <div class="collapsible-header landing-page-collapsible-header"><i class="material-icons">plus_one</i>Do you know math?</div>
+                      <div class="collapsible-body"><span>An elephant decided to visit his friend. It turned out that the elephant's house is located at point 0 and his friend's house is located at point <a class="mathematics">x(x > 0)</a> of the coordinate line. In one step the elephant can move 1, 2, 3, 4 or 5 positions forward. Determine, what is the minimum number of steps he need to make in order to get to his friend's house.</span></div>
+                    </li>
+                    <li>
+                      <div class="collapsible-header landing-page-collapsible-header"><i class="material-icons">attach_money</i>Don't be greedy</div>
+                      <div class="collapsible-body"><span>One day three best friends Petya, Vasya and Tonya decided to form a team and take part in programming contests. Participants are usually offered several problems during programming contests. Long before the start the friends decided that they will implement a problem if at least two of them are sure about the solution. Otherwise, the friends won't write the problem's solution.</span></div>
+                    </li>
+                  </ul> 
+            </div>
+            <div class="col s6">
+                chỗ này chắc cho cái hình lúc có problem set chứ giờ chưa có âu 
+            </div>
+        </div>
     </div>
 {% endblock %}
 
