@@ -14,11 +14,16 @@
           <ul class="right hide-on-med-and-down">
 
             {% if request.user.is_authenticated %}
-            <li><a href="{% url 'profile' request.user.username %}" class="btn-flat sign-in-float-btn waves-effect waves-light" style="text-transform: none;margin-right: -10px;">{{request.user.username}}</a></li>
-            <li><a href="{% url 'logout' %}" class="waves-effect waves-light blue btn sign-up-btn">Log out</a></li>
+              <li><a href="{% url 'profile' request.user.username %}" class="btn-flat sign-in-float-btn waves-effect waves-light" style="text-transform: none;margin-right: -10px;">{{request.user.username}}</a></li>
+              <li>{% include 'pages/dropdown_profile.html' %}</li> 
+            {% comment %} <li><a href="{% url 'profile' request.user.username %}" class="btn-flat sign-in-float-btn waves-effect waves-light" style="text-transform: none;margin-right: -10px;">{{request.user.username}}</a></li>
+            <li><a href="{% url 'logout' %}" class="waves-effect waves-light blue btn sign-up-btn">Log out</a></li> {% endcomment %}
+            
             {% else %}
-            <li><a href="{% url 'login' %}" class="btn-flat sign-in-float-btn waves-effect waves-light" style="text-transform: none;margin-right: -10px;">Log in</a></li>
-            <li><a href="{% url 'register' %}" class="waves-effect waves-light blue btn sign-up-btn">Register</a></li>
+          
+              <li><a href="{% url 'login' %}" class="btn-flat sign-in-float-btn waves-effect waves-light" style="text-transform: none;margin-right: -10px;">Log in</a></li>
+              <li><a href="{% url 'register' %}" class="waves-effect waves-light blue btn sign-up-btn">Register</a></li>
+            
             {% endif %}
           </ul>
 

@@ -12,7 +12,17 @@
                 {% csrf_token %} 
                 <h3 class="big-message-main-page log-reg-big">Log In</h3>
                 
-                some divider
+                {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li style="color:orange;">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %} 
+
+                <div class="divider">
+                    <hr class"solid"></hr>
+                </div>
             
                 <p class="log-reg-small">Username</p>
                 <input type="text" name="username" required="required">
@@ -21,7 +31,10 @@
                 <input type="password" name="password" required="required">
         
                 <input type="submit" name="submit" value="Login" onclick="M.toast({html: 'Have a nice day!'})"> 
+            
+                <p class="log-reg-small">Don't have any account? <a href="{% url 'register' %}">Register now</a></p>
             </form>
+
         </div>
         <div class="col s8">
             {% include 'pages/reg_log_background.html' %}

@@ -13,4 +13,5 @@ urlpatterns = [
     path('ranking/', views.ranking, name='ranking'),
     path('problem_set/', views.problem_set, name='problem_set'),
     path('profile/<str:username>/', views.userProfile, name='profile'),
+    path('setting/', views.update_user, name='setting'),
 ]

@@ -17,13 +17,13 @@
         {% include 'pages/navbar.html'%}
       {% endblock navbar%}
 
-      {% if messages %}
+      {% comment %} {% if messages %}
       <ul class="messages">
           {% for message in messages %}
           <li>{{ message }}</li>
           {% endfor %}
       </ul>
-      {% endif %}
+      {% endif %} {% endcomment %}
       
     <div class="mainpage-container"> 
       {% block main-container-content %}{% endblock %}
