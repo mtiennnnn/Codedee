@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib import messages
-from django.contrib.auth.models import User
+from .models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
-from .forms import RegisterForm
+from .forms import RegisterForm, UserForm
 # Create your views here.
 
 def index(request):
@@ -87,4 +87,12 @@ def problem_set(request):
 
 @login_required(login_url='login')
 def update_user(request):
-    return render(request, 'pages/update_user.html')
+    user = request.user
+    form = UserForm(instance=user)
+    if request.method == 'POST':
+        form = UserForm(request.POST, request.FILES, instance=user)
+        if form.is_valid():
+            form.save()
+            return redirect('profile', username=user.username)
+
+    return render(request, 'pages/update_user.html', {'form': form})

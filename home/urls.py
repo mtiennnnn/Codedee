@@ -1,5 +1,7 @@
 from django.urls import path, include
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
 import sys
 sys.setrecursionlimit(10000)
 
@@ -15,3 +17,5 @@ urlpatterns = [
     path('profile/<str:username>/', views.userProfile, name='profile'),
     path('setting/', views.update_user, name='setting'),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

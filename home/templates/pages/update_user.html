@@ -1,0 +1,24 @@
+{% extends 'pages/index.html' %}
+
+{% block title%}Codedee - Main Page{% endblock %}
+
+{% block main-container-content %}
+    <div class="main-content">
+        <h3 class="big-message-main-page">nice</h3>
+        <form class="formm" action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            {% for field in form %}
+                <div class="form_group">
+                    <label for="profile_pic">{{ field.label }}</label>
+                    {{ field }}
+                </div>
+            {% endfor %}
+        
+        <input type="submit" name="submit" value="Submit">
+        
+        </form>
+    </div>
+
+{% endblock %}
+
