@@ -1,0 +1,18 @@
+<!-- Dropdown Trigger -->
+    <div class="hmm">
+        <div class="dropdown_header">
+            <a href='{% url 'profile' request.user.username %}'>
+                <div class="dropdown_avatar avatar--medium">
+                    <img src="https://i.imgur.com/0HdIQCs.png"/>
+                </div>
+            </a>
+            <button class="dropdown-trigger" data-target="dropdown1">
+                <i class="material-icons">arrow_drop_down</i>
+            </button>
+        </div>
+        <!-- Dropdown Structure -->
+        <ul id='dropdown1' class='dropdown-menu'>
+            <li><a href="{% url 'setting' %}"><i style="margin-right:-15px;font-size:17px;" class="material-icons">settings</i>Setting</a></li>
+            <li><a href="{% url 'logout' %}"><i style="margin-right:-15px;font-size:17px;" class="material-icons">input</i>Log out</a></li>
+        </ul>
+    <div>
