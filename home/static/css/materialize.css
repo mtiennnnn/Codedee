@@ -9414,11 +9414,11 @@ hr .solid {
   fill: white;
 }
 
-/*rules css*/
+/* rules page */
 .container {
   margin: 0 auto;
   padding: 4rem;
-  width: 48rem;
+  width: 60rem;
 }
 
 .accordion .accordion-item {
@@ -9434,20 +9434,20 @@ hr .solid {
   width: 100%;
   padding: 1em 0;
   color: #7288a2;
-  font-size: 1.15rem;
-  font-weight: 400;
+  font-size: 21px;
+  font-weight: 500;
   border: none;
   background: none;
   outline: none;
 }
 .accordion button:hover, .accordion button:focus {
   cursor: pointer;
-  color: #03b5d2;
+  color: #2196F3;
 }
 .accordion button:hover::after, .accordion button:focus::after {
   cursor: pointer;
-  color: #03b5d2;
-  border: 1px solid #03b5d2;
+  color: #2196F3;
+  border: 1px solid #2196F3;
 }
 .accordion button .accordion-title {
   padding: 1em 1.5em 1em 0;
@@ -9483,7 +9483,7 @@ hr .solid {
   background: currentColor;
 }
 .accordion button[aria-expanded=true] {
-  color: #03b5d2;
+  color: #2196F3;
 }
 .accordion button[aria-expanded=true] .icon::after {
   width: 0;
@@ -9502,7 +9502,8 @@ hr .solid {
   will-change: opacity, max-height;
 }
 .accordion .accordion-content p {
-  font-size: 1rem;
-  font-weight: 300;
+  font-size: 17px;
+  font-weight: 400;
   margin: 2em 0;
 }
+/* end rules page */
