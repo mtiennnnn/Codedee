@@ -9148,11 +9148,8 @@ input[type=range]::-ms-thumb {
 .box-form {
   width: 400px;
   padding: 40px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  text-align: left;
+  /* transform: translate(-50%,-50%); */
+  text-align: center;
 }
 
 .box-form input[type="text"], .box-form input[type="password"], .box-form input[type="email"]{
@@ -9163,7 +9160,7 @@ input[type=range]::-ms-thumb {
   border: 2.5px solid #2196F3;
   padding: 14px 10px;
   width: 220px;
-  height: 55px;
+  height: 48px;
   outline: none;
   color: black;
   border-radius: 4px;
@@ -9172,12 +9169,12 @@ input[type=range]::-ms-thumb {
 }
 
 .box-form input[type="text"]:focus, .box-form input[type="password"]:focus, .box-form input[type="email"]:focus{
-  width: 320px;
+  width: 300px;
   border-color: #259B74 !important;
 }
 
 .box-form input[type="text"]:valid, .box-form input[type="password"]:valid, .box-form input[type="email"]:valid{
-  width: 320px;
+  width: 300px;
   border-color: #259B74 !important
 }
 
@@ -9256,4 +9253,24 @@ input[type=range]::-ms-thumb {
 .header-content .phatlebucac {
   width: 522px;
   height: 402px;
+}
+
+.reg-log-background {
+  padding: 50px 0 0 40px;
+  background: #2196F3;/*#FAFAFF !important;*/
+  color: white;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+}
+
+form .log-reg-big {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 40px;
+}
+
+form .log-reg-small{
+  margin-bottom: 8px;
+  margin-top: 20px;
 }

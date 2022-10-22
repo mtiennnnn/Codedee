@@ -13,7 +13,9 @@
 
   <div class="main-container">
 
-      {% include 'pages/navbar.html'%}
+      {% block navbar%}
+        {% include 'pages/navbar.html'%}
+      {% endblock navbar%}
 
       {% if messages %}
       <ul class="messages">
