@@ -9376,7 +9376,7 @@ hr .solid {
   z-index: 111;
   position: absolute;
   top: -60px;
-  min-width: 105px;
+  min-width: 120px;
   left: 0.5rem;
   background: #2196F3;
   border-radius: 8px;
@@ -9390,8 +9390,9 @@ hr .solid {
 }
 
 .dropdown-menu a {
-  width: 105px;
+  width: 135px;
   height: 50px;
+  display:flex;
   text-align: center !important;
   color: white !important;
   font-weight: 500;
@@ -9507,3 +9508,129 @@ hr .solid {
   margin: 2em 0;
 }
 /* end rules page */
+
+
+
+/* update_user form */
+.update_user {
+  background-color: white;
+  color: black;
+  height: 100%;
+  width: 66%;
+  position: fixed;
+}
+
+.update_user .big-message-main-page {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.update_user .update_user_label{
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.form_group {
+  margin: auto;
+  width: 90%;
+} 
+
+.form_group p {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.form_group input,
+.form_group textarea,
+.form_group select {
+  background: white;
+  border: 1px solid blue;
+  padding: 1rem;
+  border-radius: 3px;
+  width: 100%;
+  color: black;
+  font-weight: 500;
+  outline: none;
+}
+
+.form_group input:focus,
+.form_group textarea:focus {
+  border-color: darkcyan;
+}
+
+.form_group textarea {
+  background: white;
+  height: 10rem;
+  resize: none;
+}
+
+.form_group select {
+  color: black;
+  font-weight: 400;
+}
+
+.form_group select option {
+  background-color: red;
+  color: var(--color-light);
+  padding: 0 10rem;
+}
+
+.update-profile-form input[type="submit"]{
+  border: 0;
+  display: block;
+  margin: 20px auto;
+  text-align: left;
+  border: 2.5px solid #259B74;
+  padding: 11px 28px;
+  outline: none;
+  color: black;
+  border-radius: 4px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.update-profile-form input[type="submit"]:hover {
+  background: #2196F3;
+  color: white;
+  border-color: #2196F3
+}
+
+/* end update_user form */
+
+
+/* user_profile */
+
+.user_profile {
+  max-width: 34%;
+  margin: 65px 0 0 50px;
+}
+
+.user_profile .user_avatar img {
+  border-radius: 50%;
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.user_profile .user_name p{
+  margin-top: -5px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #130B43;
+}
+
+.user_profile .user_bio p{
+  margin-top: -20px;
+  font-size: 16px;
+  font-style: italic;
+}
+
+.edit_profile_button {
+  width: 320px;
+  background-color: #2196F3;
+}
+
+/* end user_profile */

@@ -2,22 +2,39 @@
 
 {% block title%}Codedee - Main Page{% endblock %}
 
-{% block main-container-content %}
-    <div class="main-content">
-        <h3 class="big-message-main-page">nice</h3>
-        <form class="formm" action="" method="POST" enctype="multipart/form-data">
-            {% csrf_token %}
 
-            {% for field in form %}
-                <div class="form_group">
-                    <label for="profile_pic">{{ field.label }}</label>
-                    {{ field }}
+{% block main-container-content %}
+
+    <div class="row">
+        <div class="col s4">
+
+            {% include 'pages/user_profile.html' %}
+
+        </div>
+        <div class="col s8">
+            <div class="update_user">
+        
+                <div class="box_title">
+                    <h3 class="big-message-main-page">Edit profile</h3>
                 </div>
-            {% endfor %}
         
-        <input type="submit" name="submit" value="Submit">
+                <div class="box_body">
+                    <form class="update-profile-form" action="" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        
+                            {% for field in form %}
+                                <div class="form_group">
+                                    <p class="update_user_label">{{ field.label }}</p>
+                                    {{ field }}
+                                </div>
+                            {% endfor %}
         
-        </form>
+                            <input type="submit" name="submit" value="Submit">
+                     </form>
+                </div>
+
+            </div>
+        </div>
     </div>
 
 {% endblock %}

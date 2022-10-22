@@ -1,0 +1,20 @@
+<div class="user_profile">
+    <div class="user_avatar">
+        <img src="{{ user.avatar.url }}">
+    </div>
+
+    <div class="user_name">
+        <p>@{{ user.username }}</p>
+    </div>
+
+    <div class="user_bio">
+        <p>"{{ user.bio }}"</p>
+    </div>
+
+    {% url 'setting' as my_url%}
+
+    {% if request.user.username == user.username and request.path != my_url%}
+        <a href="{% url 'setting' %}" class="waves-effect waves-light btn edit_profile_button">Edit Profile</a> 
+    {%endif%}
+
+</div>

@@ -3,8 +3,15 @@
 {% block title%}Codedee - Profile{% endblock %}
 
 {% block main-container-content %}
+    <div class="row">
+        <div class="col s4">
 
-<h1>nice ur name is {{user.username}}</h1>
-    {{user.username}}
+            {% include 'pages/user_profile.html' %}
 
+
+        </div>
+        <div class="col s8">
+            helo
+        </div>
+    </div>
 {% endblock %}
