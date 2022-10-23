@@ -10,11 +10,13 @@
                 <div class="col s7">
                     <h3 class="big-message-main-page home-heading-text">Coding Platform<br>for Noobiez.</h3>
                     <h5 class="home-heading-content">THE BEST (actually worst) CODING PLATFORM U'VE EVER SEEN, PROVIDE 69 (xD) LANGUAGES (i know u only know about 3 of them lol) COME WITH US</h5>
-                    <a href={% url 'register' %} class="waves-effect waves-light blue btn-large header-btn">Sign up now</a>
+                    {% if not request.user.is_authenticated %}
+                        <a href={% url 'register' %} class="waves-effect waves-light blue btn-large header-btn">Sign up now</a>
+                    {% endif %}
                     <a href="https://youtu.be/patU9yRgcnQ" target="_blank" class="waves-effect waves-light white blue-text btn-large header-btn border-btn">Rick rolled</a>
                 </div>
                 <div class="col s5">
-                    <img class="phatlebucac" src="https://i.imgur.com/s99uyOf.png"> <!-- hinh hack duoc tren mang -->
+                    <img class="header_image" src="https://i.imgur.com/s99uyOf.png"> <!-- hinh hack duoc tren mang -->
                 </div>
                 <div class="col s12 motivation-quote">
                     "If you can't do something, just quit, noone will help u lol."

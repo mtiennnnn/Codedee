@@ -9252,7 +9252,7 @@ input[type=range]::-ms-thumb {
   font-style: italic; color:none;
 }
 
-.header-content .phatlebucac {
+.header-content .header_image {
   width: 522px;
   height: 402px;
 }
@@ -9605,12 +9605,15 @@ hr .solid {
 .user_profile {
   max-width: 34%;
   margin: 65px 0 0 50px;
+  height: 100%;
+  width: 34%;
+  position: fixed;
 }
 
 .user_profile .user_avatar img {
   border-radius: 50%;
-  width: 320px;
-  height: 320px;
+  width: 300px;
+  height: 300px;
   object-fit: cover;
   object-position: center;
 }
@@ -9624,14 +9627,47 @@ hr .solid {
 
 .user_profile .user_bio p{
   margin-top: -20px;
-  width: 320px;
+  width: 300px;
   font-size: 16px;
   font-style: italic;
 }
 
 .edit_profile_button {
-  width: 320px;
+  width: 300px;
   background-color: #2196F3;
 }
 
 /* end user_profile */
+
+
+
+
+/* profile_page */
+
+.profile_page {
+  max-width: 100%;
+}
+
+.profile_page .profile_header .big-message-main-page {
+  font-size: 45px;
+  font-weight: 800!important;
+  text-align: center;
+}
+
+.profile_card .card {
+  position: relative;
+  width: 650px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.profile_card .card-title {
+  color: #130B43;
+  font-weight: 600;
+}
+
+.profile_card .card-text {
+  color: black;
+}
+/* profile_page */

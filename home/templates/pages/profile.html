@@ -3,15 +3,49 @@
 {% block title%}Codedee - Profile{% endblock %}
 
 {% block main-container-content %}
+{% load static %}
     <div class="row">
         <div class="col s4">
 
             {% include 'pages/user_profile.html' %}
 
-
         </div>
         <div class="col s8">
-            helo
+
+            <div class="profile_page">
+
+                <div class="profile_header">
+                    <p class="big-message-main-page">Your progress on Codedee</p>
+                </div>
+
+                <div class="divider">
+                    <hr class"solid"></hr>
+                </div>
+                
+                <div class="profile_body">
+
+                    <div class="profile_card">
+
+                        <div class="card">
+                             <div class="card-content white-text">
+                               <span class="card-title">Your Rank</span>
+                               <p class="card-text">troi oi chua lam back end</p>
+                             </div>
+                        </div>
+             
+                        <div class="card">
+                            <div class="card-content white-text">
+                              <span class="card-title">Your problem solved</span>
+                              <p class="card-text">troi oi chua lam back end</p>
+                            </div>
+                       </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
     </div>
 {% endblock %}

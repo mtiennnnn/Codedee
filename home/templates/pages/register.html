@@ -12,7 +12,7 @@
             <form class="box-form" action="" method="POST">
                 {% csrf_token %} 
 
-                <h3 class="big-message-main-page log-reg-big">Register</h3>
+                <h3 class="big-message-main-page log-reg-big">Codedee Register</h3>
 
                 {% if form.errors %}
                 <div id="form-error">
@@ -37,7 +37,7 @@
                 <p class="log-reg-small">Password Confirmation</p>
                 {{form.password2}}
 
-                <input type="submit" name="submit" value="Register"> 
+                <input type="submit" name="submit" value="Register"  onclick="M.toast({html: 'Have a nice day!'})"> 
 
                 <p class="log-reg-small">Already got an account? <a href="{% url 'login' %}">Log in now</a></p>
             </form>
