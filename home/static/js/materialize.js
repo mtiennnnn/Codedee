@@ -12385,19 +12385,23 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
 //rules js
-const items = document.querySelectorAll(".accordion button");
+const btns = document.querySelectorAll(".acc-btn");
 
-function toggleAccordion() {
-  const itemToggle = this.getAttribute('aria-expanded');
-  
-  for (i = 0; i < items.length; i++) {
-    items[i].setAttribute('aria-expanded', 'false');
-  }
-  
-  if (itemToggle == 'false') {
-    this.setAttribute('aria-expanded', 'true');
-  }
+// fn
+function accordion() {
+  // this = the btn | icon & bg changed
+  this.classList.toggle("is-open");
+
+  // the acc-content
+  const content = this.nextElementSibling;
+
+  // IF open, close | else open
+  if (content.style.maxHeight) content.style.maxHeight = null;
+  else content.style.maxHeight = content.scrollHeight + "px";
 }
 
-items.forEach(item => item.addEventListener('click', toggleAccordion));
+// event
+btns.forEach((el) => el.addEventListener("click", accordion));
+
+
 

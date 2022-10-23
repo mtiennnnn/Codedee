@@ -9416,96 +9416,45 @@ hr .solid {
 }
 
 /* rules page */
-.container {
+.acc-container {
   margin: 0 auto;
   padding: 4rem;
   width: 60rem;
 }
-
-.accordion .accordion-item {
-  border-bottom: 1px solid #e5e5e5;
-}
-.accordion .accordion-item button[aria-expanded=true] {
-  border-bottom: 1px solid #03b5d2;
-}
-.accordion button {
-  position: relative;
-  display: block;
-  text-align: left;
+.acc-btn {
   width: 100%;
-  padding: 1em 0;
-  color: #7288a2;
-  font-size: 21px;
-  font-weight: 500;
+  padding: 1.6rem 2rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+  background: inherit;
   border: none;
-  background: none;
   outline: none;
+  text-align: left;
+  transition: all 0.5s linear;
 }
-.accordion button:hover, .accordion button:focus {
-  cursor: pointer;
-  color: #2196F3;
+.acc-btn:after {
+  content: "\27A4";
+  color: #0fc5dd;
+  float: right;
+  transition: all 0.3s linear;
 }
-.accordion button:hover::after, .accordion button:focus::after {
-  cursor: pointer;
-  color: #2196F3;
-  border: 1px solid #2196F3;
+.acc-btn.is-open:after {
+  transform: rotate(90deg);
 }
-.accordion button .accordion-title {
-  padding: 1em 1.5em 1em 0;
+.acc-btn:hover, .acc-btn.is-open {
+  color: #000;
+  font-weight: bold;
 }
-.accordion button .icon {
-  display: inline-block;
-  position: absolute;
-  top: 18px;
-  right: 0;
-  width: 22px;
-  height: 22px;
-  border: 1px solid;
-  border-radius: 22px;
-}
-.accordion button .icon::before {
-  display: block;
-  position: absolute;
-  content: "";
-  top: 9px;
-  left: 5px;
-  width: 10px;
-  height: 2px;
-  background: currentColor;
-}
-.accordion button .icon::after {
-  display: block;
-  position: absolute;
-  content: "";
-  top: 5px;
-  left: 9px;
-  width: 2px;
-  height: 10px;
-  background: currentColor;
-}
-.accordion button[aria-expanded=true] {
-  color: #2196F3;
-}
-.accordion button[aria-expanded=true] .icon::after {
-  width: 0;
-}
-.accordion button[aria-expanded=true] + .accordion-content {
-  opacity: 1;
-  max-height: 9em;
-  transition: all 200ms linear;
-  will-change: opacity, max-height;
-}
-.accordion .accordion-content {
-  opacity: 0;
+
+.acc-content {
   max-height: 0;
+  color: rgba(0,0,0,0.75);
+  font-size: 1rem;
+  margin: 0 2rem;
+  padding-left: 1rem;
   overflow: hidden;
-  transition: opacity 200ms linear, max-height 200ms linear;
-  will-change: opacity, max-height;
-}
-.accordion .accordion-content p {
-  font-size: 17px;
-  font-weight: 400;
-  margin: 2em 0;
+  transition: max-height 0.3s ease-in-out;
+  border-bottom: 1px solid #ccc;
 }
 /* end rules page */
 

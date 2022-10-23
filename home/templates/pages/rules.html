@@ -13,25 +13,31 @@
         </head>
         <body>
         <!-- partial:index.partial.html -->
-        <div class="container">
-          <h3 class="big-message-main-page">Rules</h3>
-          <div class="accordion">
-            <div class="accordion-item">
-              <button id="accordion-button-1" aria-expanded="false"><span class="accordion-title">1. Age</span><span class="icon" aria-hidden="true"></span></button>
-              <div class="accordion-content">
-                <p>Everybody is welcome to Codedee.</p>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <button id="accordion-button-2" aria-expanded="false"><span class="accordion-title">2. Registration</span><span class="icon" aria-hidden="true"></span></button>
-              <div class="accordion-content">
-                <p>I dont know what to write here</p>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <button id="accordion-button-4" aria-expanded="true"><span class="accordion-title">4. Problems</span><span class="icon" aria-hidden="true"></span></button>
-              <div class="accordion-content">
-                <p>4.1 Editor and Programming Language</p>
+        <h3 class="big-message-main-page">Rules</h3>
+
+  <div class="acc-container">
+
+    <button class="acc-btn">1. Age</button>
+    <div class="acc-content">
+      <p>
+        Everybody is welcome to Codedee.
+      </p>
+    </div>
+
+    <button class="acc-btn">
+      2. Registration
+    </button>
+    <div class="acc-content">
+      <p>
+        I dont know what to write here
+      </p>
+    </div>
+
+    <button class="acc-btn">
+      4. Problems
+    </button>
+    <div class="acc-content">
+      <p>4.1 Editor and Programming Language</p>
                 <p>(A) Editors. You may use any editor or development environment, including those made available online, as long as your code is not accessible to others during the Round.</p>
                 <p>(B) Programming Language. You may use any programming language(s) available on the Codedee website for each solution you wish to submit. It is your responsibility to check the FAQ for information on the currently available versions and configurations for each language. The set of allowed languages and their versions are subject to change at any time.</p>
                 <p>4.2 Submitting Solutions for Kick Start Problems.</p>
@@ -43,23 +49,24 @@
                 <p>(B) Judgment Of Test Sets. Your submission will be judged against each test set in order—sample (if applicable), then Test Set 1, Test Set 2, etc. If your submission passes a test set, it will be run on the next test set (if any), and so on; if your submission fails a test set, it will not be run on any subsequent test sets.</p>
                 <p>(C) Points on Test Sets. For each problem, all submissions can receive points for the Test Sets solved.</p>
                 <p>(D) Rank. If you score at least one (1) point in the Round, you will have a rank for that round, which will be determined by your score and your penalty time. Contestants will be ranked in order of highest score first and lowest score last, breaking ties by lowest penalty time first and highest penalty time last. We reserve the right to break ties when necessary based on finer time precision than is shown on the scoreboard. Contestants who score a total of zero (0) points in a Round are not considered as having a rank.</p>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <button id="accordion-button-5" aria-expanded="false"><span class="accordion-title">5. Disqualification</span><span class="icon" aria-hidden="true"></span></button>
-              <div class="accordion-content">
-                <p>You may be disqualified from Codedee if Admins reasonably believes that you have attempted to undermine the legitimate operation of Codedee</p>
-              </div>
-            </div>
-          </div>
-          <br><br><br><br><br><br><br>
-        </div>
-        </body>
-        </html>
+    </div>
+
+    <button class="acc-btn">
+      5. Disqualification
+    </button>
+    <div class="acc-content">
+      <p>
+        You may be disqualified from Codedee if Admins reasonably believes that you have attempted to undermine the legitimate operation of Codedee
+      </p>
+    </div>
+  </div>
+</body>
+</html>
     </div>   
     </div>
     <div class="side-content">
         {% include 'pages/ranking_table.html' %}
     </div>
 {% endblock %}
+
 
