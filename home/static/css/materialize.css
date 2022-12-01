@@ -9666,3 +9666,41 @@ hr .solid {
 }
 
 /* end reg-log-background */
+
+/* problem set */
+tr a {
+  color: black;
+}
+
+tr a:hover {
+  color: #2196F3; 
+}
+
+/* problem */
+.problem_area {
+  margin-left: 20px;
+}
+
+.problem_description {
+  color: black;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.Easy {
+  color: #078B7C;
+}
+
+.Medium {
+  color: #AD841C;
+}
+
+.Hard {
+  color: #E73357;
+}
+
+/* code_editor_section */
+.code_editor_section {
+  background: paleturquoise
+  
+}

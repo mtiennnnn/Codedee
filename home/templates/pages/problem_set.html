@@ -1,10 +1,36 @@
 {% extends 'pages/index.html' %}
 
+{% load markdown_extras %}
+
 {% block title%}Codedee - Problem Set{% endblock %}
 
 {% block main-container-content %}
     <div class="main-content">
         <h3 class="big-message-main-page">Problem Set</h3>
+        <table>
+            <thead>
+              <tr>
+                  <th>Solved</th>
+                  <th>Problem Name</th>
+                  <th>Difficulty</th>
+                  <th>Point</th>
+              </tr>
+            </thead>
+    
+            <tbody>
+              {% for problems in problems %}
+              <tr>
+                <td> <i style="color: green;" class="material-icons">check_box</i></td>
+                <td><a class="problem_set_name" href="{% url 'problem' problems.id %}">{{problems.id}}. {{problems.problemName}}</a></td>
+                <td class="{{problems.difficulty}}">{{problems.difficulty}}</td>
+                <td>{{problems.points}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+
+
+        <br><br><br><br>
     </div>
     <div class="side-content">
         {% include 'pages/ranking_table.html' %}

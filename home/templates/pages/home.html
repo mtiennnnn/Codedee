@@ -2,6 +2,8 @@
 
 {% block title%}Codedee - Main Page{% endblock %}
 
+{% load static %}
+
 {% block main-container-content %}
     <div class="header">
         {% comment %} <h3 class="big-message-main-page home-heading-text">Coding Platform for Noobiez.</h3> {% endcomment %}
@@ -19,7 +21,7 @@
                     <img class="header_image" src="https://i.imgur.com/s99uyOf.png"> <!-- hinh hack duoc tren mang -->
                 </div>
                 <div class="col s12 motivation-quote">
-                    "If you can't do something, just quit, noone will help u lol."
+                    "Some motivational quote that I don't even know what to add"
                 </div>
             </div> 
         </div>
@@ -27,8 +29,11 @@
     <div class="main-landing-page-content">
         <div class="row">
             <div class="col s6">
+                <img src="{% static './images/homeimage.png' %}" alt="" style="margin-left: 6rem; margin-top: 1rem;">
+            </div>
+            <div class="col s6">
                 
-                <h3 class="big-message-main-page">No more than 10 coding exercises waiting for you (MONO).</h3>
+                <h3 class="big-message-main-page">More than 10 coding exercises waiting for you.</h3>
                 
                 <div class="divider">
                     <hr class"solid"></hr>
@@ -50,9 +55,6 @@
                       <div class="collapsible-body"><span>One day three best friends Petya, Vasya and Tonya decided to form a team and take part in programming contests. Participants are usually offered several problems during programming contests. Long before the start the friends decided that they will implement a problem if at least two of them are sure about the solution. Otherwise, the friends won't write the problem's solution.</span></div>
                     </li>
                   </ul> 
-            </div>
-            <div class="col s6">
-                chỗ này chắc cho cái hình lúc có problem set chứ giờ chưa có âu 
             </div>
         </div>
     </div>

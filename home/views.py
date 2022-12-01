@@ -1,21 +1,26 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib import messages
-from .models import User
+from .models import User, Problem
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from .forms import RegisterForm, UserForm
+import sys
 # Create your views here.
 
 def index(request):
     return render(request, 'pages/home.html')
 
 def about(request):
-    return render(request, 'pages/about.html')
+    user = User.objects.all().order_by('-points')
+    context = {'users': user}
+    return render(request, 'pages/about.html', context)
 
 def rules(request):
-    return render(request, 'pages/rules.html')
+    user = User.objects.all().order_by('-points')
+    context = {'users': user}
+    return render(request, 'pages/rules.html', context)
 
 def loginPage(request):
 
@@ -74,7 +79,9 @@ def registerPage(request):
     return render(request, 'pages/register.html', {'form':form})
 
 def ranking(request):
-    return render(request, 'pages/ranking.html')
+    user = User.objects.all().order_by('-points')
+    context = {'users': user}
+    return render(request, 'pages/ranking.html', context)
 
 def userProfile(request, username):
     user = User.objects.get(username=username)
@@ -83,7 +90,46 @@ def userProfile(request, username):
 
 @login_required(login_url='login')
 def problem_set(request):
-    return render(request, 'pages/problem_set.html')
+    user = User.objects.all().order_by('-points')
+    problem = Problem.objects.all().order_by('id')
+    context = {'users': user, 'problems': problem}
+    return render(request, 'pages/problem_set.html', context)
+
+@login_required(login_url='login')
+def problemPage(request, id):
+    problem = Problem.objects.filter(id=id)
+    # context = {'problems': problem}
+
+    # code editor
+    codeareadata = ""
+    output = ""
+    if request.method == "POST":
+        codeareadata = request.POST['codearea']
+
+        try:
+            #save original standart output reference
+
+            original_stdout = sys.stdout
+            sys.stdout = open('file.txt', 'w') #change the standard output to the file we created
+
+            #execute code
+
+            exec(codeareadata)  #example =>   print("hello world")
+
+            sys.stdout.close()
+
+            sys.stdout = original_stdout  #reset the standard output to its original value
+
+            # finally read output from file and save in output variable
+
+            output = open('file.txt', 'r').read()
+
+        except Exception as e:
+            # to return error in the code
+            sys.stdout = original_stdout
+            output = e
+
+    return render(request, 'pages/problem.html', {"problems": problem ,"code":codeareadata , "output":output})
 
 @login_required(login_url='login')
 def update_user(request):
@@ -96,3 +142,35 @@ def update_user(request):
             return redirect('profile', username=user.username)
 
     return render(request, 'pages/update_user.html', {'form': form})
+
+# def runcode(request):
+#     if request.method == "POST":
+#         codeareadata = request.POST['codearea']
+
+#         try:
+#             #save original standart output reference
+
+#             original_stdout = sys.stdout
+#             sys.stdout = open('file.txt', 'w') #change the standard output to the file we created
+
+#             #execute code
+
+#             exec(codeareadata)  #example =>   print("hello world")
+
+#             sys.stdout.close()
+
+#             sys.stdout = original_stdout  #reset the standard output to its original value
+
+#             # finally read output from file and save in output variable
+
+#             output = open('file.txt', 'r').read()
+
+#         except Exception as e:
+#             # to return error in the code
+#             sys.stdout = original_stdout
+#             output = e
+
+
+#     #finally return and render index page and send codedata and output to show on page
+
+#     return render(request , 'pages/problem.html', {"code":codeareadata , "output":output})
