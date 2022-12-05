@@ -19,15 +19,32 @@
                     <td>User</td>
                     <td>Rating</td>
                 </tr>
-                {% for users in users %}
+                {% for users in page_obj %}
                 <tr>
-                    <td>{{forloop.counter}}</td>
-                    <td>{{users.username}}</td>
+                    <td>{{ forloop.counter0|add:page_obj.start_index }}</td>
+                    <td><a href="{% url 'profile' users.username %}">{{users.username}}</a></td>
                     <td>{{users.points}}</td>
                 </tr>
                 {% endfor %}
                 </tbody>
             </table>
+            <div class="pagination" style="text-align: center; margin-top: 50px;">
+                <span class="step-links">
+                    {% if page_obj.has_previous %}
+                        <a href="?page=1">&laquo; first</a>
+                        <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                    {% endif %}
+
+                    <span class="current">
+                        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                    </span>
+
+                    {% if page_obj.has_next %}
+                        <a href="?page={{ page_obj.next_page_number }}">next</a>
+                        <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                    {% endif %}
+                </span>
+            </div><br><br><br>
         </div>
     </div>
     <div class="side-content">

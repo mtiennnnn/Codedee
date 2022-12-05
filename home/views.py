@@ -1,12 +1,17 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.contrib import messages
-from .models import User, Problem
+from .models import User, Problem, Code
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from .forms import RegisterForm, UserForm
 import sys
+from rest_framework import status
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
+from .serializers import CodeSerializer
+import os
+from django.core.paginator import Paginator
 # Create your views here.
 
 def index(request):
@@ -80,7 +85,10 @@ def registerPage(request):
 
 def ranking(request):
     user = User.objects.all().order_by('-points')
-    context = {'users': user}
+    paginator = Paginator(user, 10)
+    page_num = request.GET.get('page')
+    page_obj = paginator.get_page(page_num)
+    context = {'users': user, 'page_obj':page_obj}
     return render(request, 'pages/ranking.html', context)
 
 def userProfile(request, username):
@@ -107,25 +115,19 @@ def problemPage(request, id):
         codeareadata = request.POST['codearea']
 
         try:
-            #save original standart output reference
 
             original_stdout = sys.stdout
-            sys.stdout = open('file.txt', 'w') #change the standard output to the file we created
+            sys.stdout = open('file.txt', 'w') 
 
-            #execute code
-
-            exec(codeareadata)  #example =>   print("hello world")
+            exec(codeareadata) 
 
             sys.stdout.close()
 
-            sys.stdout = original_stdout  #reset the standard output to its original value
-
-            # finally read output from file and save in output variable
+            sys.stdout = original_stdout 
 
             output = open('file.txt', 'r').read()
 
         except Exception as e:
-            # to return error in the code
             sys.stdout = original_stdout
             output = e
 
@@ -143,6 +145,23 @@ def update_user(request):
 
     return render(request, 'pages/update_user.html', {'form': form})
 
+class submitCode(ListCreateAPIView):
+    model = Code
+    serializer_class = CodeSerializer
+
+    def get_queryset(self):
+        return Code.object.all()
+
+    def create(self, request, *args, **kwargs):
+        serializer = CodeSerializer(data=request.data)
+
+        if serializer.is_valid():
+            serializer.save()
+
+            return JsonResponse({
+
+            })
+    
 # def runcode(request):
 #     if request.method == "POST":
 #         codeareadata = request.POST['codearea']

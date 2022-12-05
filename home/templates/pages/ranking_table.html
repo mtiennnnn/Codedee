@@ -16,7 +16,7 @@
                     {% if forloop.counter <= 5 %}
                   <tr>
                     <td>{{forloop.counter}}</td>
-                    <td>{{users.username}}</td>
+                    <td><a href="{% url 'profile' users.username %}">{{users.username}}</a></td>
                     <td>{{users.points}}</td>
                   </tr>
                     {% endif %}

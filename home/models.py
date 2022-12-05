@@ -21,4 +21,6 @@ class Problem(models.Model):
     def __str__(self):
         return self.problemName
 
+class Code(models.Model):
+    content = models.TextField(null=False, blank=True)
 
