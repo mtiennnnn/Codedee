@@ -1,15 +1,12 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse
 from django.contrib import messages
-from .models import User, Problem, Code
+from .models import User, Problem
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from .forms import RegisterForm, UserForm
 import sys
-from rest_framework import status
-from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
-from .serializers import CodeSerializer
 import os
 from django.core.paginator import Paginator
 from io import StringIO
@@ -167,23 +164,3 @@ def update_user(request):
 
     return render(request, 'pages/update_user.html', {'form': form})
 
-class submitCode(ListCreateAPIView):
-    model = Code
-    serializer_class = CodeSerializer
-
-    def get_queryset(self):
-        return Code.objects.all()
-
-    def create(self, request, *args, **kwargs):
-        serializer = CodeSerializer(data=request.data)
-
-        if serializer.is_valid():
-            serializer.save()
-
-            return JsonResponse({
-                'content' : 'context successful'
-            }, status=status.HTTP_201_CREATED)
-        
-        return JsonResponse({
-            'content': 'unsuccessful'
-        }, status=status.HTTP_400_BAD_REQUEST)

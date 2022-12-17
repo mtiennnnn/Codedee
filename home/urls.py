@@ -17,7 +17,6 @@ urlpatterns = [
     path('profile/<str:username>/', views.userProfile, name='profile'),
     path('setting/', views.update_user, name='setting'),
     path('problem/<str:id>/', views.problemPage, name='problem'),
-    path('submit/', views.submitCode.as_view()),
 ]
 
 

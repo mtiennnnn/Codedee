@@ -20,7 +20,3 @@ class Problem(models.Model):
     #solved = models.ForeignKey(User, on_delete=models.CASCADE, null=False)
     def __str__(self):
         return self.problemName
-
-class Code(models.Model):
-    content = models.TextField(null=False, blank=True)
-    language = models.CharField(null=True, blank=False, max_length=20)
