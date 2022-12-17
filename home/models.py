@@ -23,4 +23,4 @@ class Problem(models.Model):
 
 class Code(models.Model):
     content = models.TextField(null=False, blank=True)
-
+    language = models.CharField(null=True, blank=False, max_length=20)

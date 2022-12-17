@@ -6,4 +6,4 @@ class CodeSerializer(serializers.ModelSerializer):
 
     class Meta: 
         model = Code
-        fields = ('content')
+        fields = ('content', 'language',)

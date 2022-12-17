@@ -32,7 +32,6 @@ def loginPage(request):
     # delete message before load login page
     storage = messages.get_messages(request)
     for _ in storage:
-        # This is important
         # Without this loop `_loaded_messages` is empty
         pass
 
@@ -150,7 +149,7 @@ class submitCode(ListCreateAPIView):
     serializer_class = CodeSerializer
 
     def get_queryset(self):
-        return Code.object.all()
+        return Code.objects.all()
 
     def create(self, request, *args, **kwargs):
         serializer = CodeSerializer(data=request.data)
@@ -159,37 +158,9 @@ class submitCode(ListCreateAPIView):
             serializer.save()
 
             return JsonResponse({
-
-            })
-    
-# def runcode(request):
-#     if request.method == "POST":
-#         codeareadata = request.POST['codearea']
-
-#         try:
-#             #save original standart output reference
-
-#             original_stdout = sys.stdout
-#             sys.stdout = open('file.txt', 'w') #change the standard output to the file we created
-
-#             #execute code
-
-#             exec(codeareadata)  #example =>   print("hello world")
-
-#             sys.stdout.close()
-
-#             sys.stdout = original_stdout  #reset the standard output to its original value
-
-#             # finally read output from file and save in output variable
-
-#             output = open('file.txt', 'r').read()
-
-#         except Exception as e:
-#             # to return error in the code
-#             sys.stdout = original_stdout
-#             output = e
-
-
-#     #finally return and render index page and send codedata and output to show on page
-
-#     return render(request , 'pages/problem.html', {"code":codeareadata , "output":output})
+                'content' : 'context successful'
+            }, status=status.HTTP_201_CREATED)
+        
+        return JsonResponse({
+            'content': 'unsuccessful'
+        }, status=status.HTTP_400_BAD_REQUEST)
