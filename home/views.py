@@ -12,6 +12,7 @@ from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIV
 from .serializers import CodeSerializer
 import os
 from django.core.paginator import Paginator
+from io import StringIO
 # Create your views here.
 
 def index(request):
@@ -109,26 +110,48 @@ def problemPage(request, id):
 
     # code editor
     codeareadata = ""
+    lang = ""
     output = ""
     if request.method == "POST":
         codeareadata = request.POST['codearea']
-
+        lang = request.POST['languages']
         try:
+            if lang == 'python':
+                old_stdout = sys.stdout
+                output = sys.stdout = StringIO()
+                exec(codeareadata)
+                sys.stdout = old_stdout
+                output = output.getvalue()
+            elif lang == 'php':
+                sys.stdout = open('file.php', 'w')
+                print(codeareadata)
+                sys.stdout.close()
 
-            original_stdout = sys.stdout
-            sys.stdout = open('file.txt', 'w') 
+                output = os.popen('php file.php').read()
+        
+                #output = output.getvalue()
+            elif lang == 'javascript':
+                sys.stdout = open('file.js', 'w')
+                print(codeareadata)
+                sys.stdout.close()
 
-            exec(codeareadata) 
+                output = os.popen('node file.js').read()
+            elif lang == 'C++':
+                sys.stdout = open('file.cpp', 'w')
+                print(codeareadata)
+                sys.stdout.close()
 
-            sys.stdout.close()
+                os.system("g++ file.cpp -o thisiscpp")
+                output = os.popen('./thisiscpp').read()
+            elif lang == 'C':
+                sys.stdout = open('file.c', 'w')
+                print(codeareadata)
+                sys.stdout.close()
 
-            sys.stdout = original_stdout 
-
-            output = open('file.txt', 'r').read()
-
+                os.system("gcc file.c -o thisisc")
+                output = os.popen('./thisisc').read()
         except Exception as e:
-            sys.stdout = original_stdout
-            output = e
+            output = "Compile failed!"
 
     return render(request, 'pages/problem.html', {"problems": problem ,"code":codeareadata , "output":output})
 
