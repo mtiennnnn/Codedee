@@ -1,3 +1,4 @@
+{% load static %}
 <style>
     * {
         box-sizing: border-box;
@@ -132,11 +133,11 @@
         </select>
         <div class="form-group">
             <label for="codearea">Code Area</label>
-            <textarea type="text" class="form-control" id="codearea" name="codearea" rows="4" cols="100" style="height: 30em;" onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}">{{ code }}</textarea>
+            <textarea type="text" class="form-control" id="codearea" name="codearea" rows="4" cols="1000" style="height: 30em; font-size: 20px; font-family: Consolas;" onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}">{{ code }}</textarea>
         </div>
         <div class="form-group">
             <label for="output">Output</label>
-            <textarea type="text" class="form-control" id="output" name="output" style="height: 10em;" rows="4" disabled> {{ output }} </textarea>
+            <textarea type="text" class="form-control" id="output" name="output" style="height: 10em; font-size: 19px; color: black;" rows="4" disabled> {{ output }} </textarea>
         </div>
         <button type="submit" class="btn btn-primary" style="margin-left:50px;">Submit</button>
     </form>

@@ -1,1 +1,1 @@
-console.log("ijiadsfijosdf")
+console.log(1+2)
