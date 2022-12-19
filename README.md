@@ -16,7 +16,7 @@ Codedee (sounds like "Code đi" in Vietnamese) is a web-based coding platform us
 1) Install dependencies
 
 ```
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 
 2) Run
