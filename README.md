@@ -13,3 +13,23 @@ Codedee (sounds like "Code đi" in Vietnamese) is a web-based coding platform us
 
 ## Installation
 
+1) Install dependencies
+
+```
+pip install requirements.txt
+```
+
+2) Run
+
+```python
+python3 manage.py runserver
+```
+
+3) Staff account credential
+
+```
+test/1
+```
+ 
+
+
