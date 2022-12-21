@@ -1,0 +1,26 @@
+{% extends 'pages/index.html' %}
+
+{% load markdown_extras %}
+
+{% block title%}Codedee - Problem{% endblock %}
+
+{% block main-container-content %}
+
+<div class="row">
+    <div class="problem_area">
+        <div class="col s6">
+            {% for problems in problems %} 
+                <ul>
+                    <li class="big-message-main-page">{{ problems.problemName }} ({{ problems.points }} pts)</li>
+                    <li class="problem_difficulty">{{ problems.difficulty }}</li>
+                    <li class="problem_description">{{ problems.description | markdown | safe | linebreaks}}</li>
+                </ul>
+            {% endfor %}
+        </div>
+        <div class="col s6">
+            {% include 'pages/code_editor.html' %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

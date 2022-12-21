@@ -1,0 +1,155 @@
+{% load static %}
+<style>
+    * {
+        box-sizing: border-box;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    /*Custom scrollbar*/
+    ::-webkit-scrollbar {
+        width: 8px;
+        transform: translate(5px,5px);
+        padding-right: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        background-color: #444;
+        border-radius: 2px;
+    }
+    ::-webkit-scrollbar-track:hover {
+        border-radius: 2px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: #777;
+        border-radius: 2px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: #999;
+    }
+    /*Style list button*/
+    .list_btn {
+        font-size: 16px;
+        text-align: left;
+        width: 200px;
+        height: 40px;
+        padding-left: 15px;
+        background-color: whitesmoke;
+        border: none;
+        border-radius: 2px;
+        box-shadow: 3px 3px 20px 1px #aaa;
+        cursor: pointer;
+    }
+    .list_btn:hover {background-color: #e8e8e8;}
+    .list_btn:active {background-color: #ccc;}
+    /*List button arrow*/
+    .button_arrow {
+        position: relative;
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        right: 30px;
+        bottom: 3px;
+        border: solid black;
+        border-width: 0 0 3px 3px;
+        transform: rotate(-45deg);
+        transition-duration: 0.2s;
+    }
+    .list_btn:focus ~ .button_arrow {
+        transform: rotate(-225deg) translate(3px, -3px);
+    }
+    /*Position main container*/
+    .menu_container {
+
+        width: 250px;
+    }
+    /*Hide default radio styling*/
+    .list_option {
+        visibility: hidden;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        cursor: pointer;
+    }
+    /*Style option menu and its items*/
+    .option_container {
+        margin-top: 10px;
+        border-radius: 2px;
+        box-shadow: 3px 3px 20px 1px #aaa;
+        height: 0px;
+        width: 200px;
+        transition-duration: 0.3s;
+        transition-delay: 0.4s;
+        overflow: auto;
+        visibility: hidden;
+    }
+    .option_field {
+        display: block;
+        background-color: white;
+        border-radius: 2px;
+        padding: 10px 80px 10px 5px;
+        cursor: pointer;
+    }
+    .option_field:hover {
+        background-color: #ddd;
+    }
+    /*Create select checkmarks*/
+    .checkmark {
+        position: relative;
+        display: inline-block;
+        width: 16px;
+        height: 10px;
+        left: 80px;
+        bottom: 5px;
+        border: solid black;
+        border-width: 0 0 3px 3px;
+        transform: rotate(-45deg);
+        visibility: hidden;
+    }
+    /*Checkmark visible when option selected*/
+    .list_option:checked ~ .checkmark {
+        visibility: visible;
+    }
+    /*Open list when list button is clicked*/
+    .list_btn:focus ~ .option_container {
+        height: 135px;
+        visibility: visible;
+    }
+    select {
+        visibility: visible;
+    }
+    textarea {
+        resize: none;
+    }
+</style>
+<body>
+<div class="code_editor_sectiona">
+    <form action="" method="post">
+        {% csrf_token %}
+        <label for="lang">Language</label>
+        <select name="languages" id="lang" style="display: block;">
+            <option value="python">Python</option>
+            <option value="php">PHP</option>
+            <option value="javascript">JavaScript</option>
+            <option value="C++">C++</option>
+            <option value="C">C</option>
+        </select>
+        <div class="form-group">
+            <label for="codearea">Code Area</label>
+            <textarea type="text" class="form-control" id="codearea" name="codearea" rows="4" cols="1000" style="height: 30em; font-size: 20px; font-family: Consolas;" onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}">{{ code }}</textarea>
+        </div>
+        <div class="form-group">
+            <label for="output">Output</label>
+            <textarea type="text" class="form-control" id="output" name="output" style="height: 10em; font-size: 19px; color: black;" rows="4" disabled> {{ output }} </textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="margin-left:50px;">Submit</button>
+    </form>
+    
+    <script>
+        //Change list button inner text
+        const listItems = document.getElementsByClassName('list_option');
+        for(let i = 0; i < listItems.length; ++i){
+            listItems[i].addEventListener('click', function() {
+                document.getElementsByClassName('list_btn')[0].innerHTML = this.title;
+            });
+        }
+    </script>
+</div>
+</body>

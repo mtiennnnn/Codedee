@@ -19,38 +19,32 @@
                     <td>User</td>
                     <td>Rating</td>
                 </tr>
+                {% for users in page_obj %}
                 <tr>
-                    <td>1</td>
-                    <td>manhtyn</td>
-                    <td>3001</td>
+                    <td>{{ forloop.counter0|add:page_obj.start_index }}</td>
+                    <td><a href="{% url 'profile' users.username %}">{{users.username}}</a></td>
+                    <td>{{users.points}}</td>
                 </tr>
-                <tr>
-                    <td>2</td>
-                    <td>khjthjnk</td>
-                    <td>2891</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>tank</td>
-                    <td>900</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>giongnef</td>
-                    <td>400</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>nguyentyle</td>
-                    <td>200</td>
-                </tr>
-                <tr>
-                  <td>6</td>
-                  <td>ban toc hong</td>
-                  <td>anh yeu em</td>
-                </tr>
+                {% endfor %}
                 </tbody>
             </table>
+            <div class="pagination" style="text-align: center; margin-top: 50px;">
+                <span class="step-links">
+                    {% if page_obj.has_previous %}
+                        <a href="?page=1">&laquo; first</a>
+                        <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                    {% endif %}
+
+                    <span class="current">
+                        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                    </span>
+
+                    {% if page_obj.has_next %}
+                        <a href="?page={{ page_obj.next_page_number }}">next</a>
+                        <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                    {% endif %}
+                </span>
+            </div><br><br><br>
         </div>
     </div>
     <div class="side-content">

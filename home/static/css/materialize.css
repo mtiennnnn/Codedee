@@ -6106,7 +6106,7 @@ select:focus {
 
 button:focus {
   outline: none;
-  background-color: #2ab7a9;
+  background-color: #2196F3;
 }
 
 label {
@@ -9426,7 +9426,7 @@ hr .solid {
   padding: 1.6rem 2rem;
   font-size: 1.3rem;
   cursor: pointer;
-  background: inherit;
+  background: white;
   border: none;
   outline: none;
   text-align: left;
@@ -9495,9 +9495,9 @@ hr .solid {
 .form_group textarea,
 .form_group select {
   background: white;
-  border: 1px solid blue;
+  border: 2.5px solid #2196F3;
   padding: 1rem;
-  border-radius: 3px;
+  border-radius: 10px;
   width: 100%;
   color: black;
   font-weight: 500;
@@ -9620,3 +9620,87 @@ hr .solid {
   color: black;
 }
 /* profile_page */
+
+
+/* reg-log-background */
+.reg-log-background {
+  width: 66%;
+}
+
+.reg-log-background .images {
+  text-align: center;
+}
+
+.reg-log-background .images img {
+  width: 500px;
+}
+
+.reg-log-background .content {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  text-align: center;
+  font-family: monospace;
+}
+
+.reg-log-background .content > * {
+  margin: .6rem 0;
+}
+
+.reg-log-background .content .icons {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.reg-log-background .content .icons > * {
+  width: 70px;
+}
+
+.reg-log-background .content .icons .more {
+  width: fit-content;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* end reg-log-background */
+
+/* problem set */
+tr a {
+  color: black;
+}
+
+tr a:hover {
+  color: #2196F3; 
+}
+
+/* problem */
+.problem_area {
+  margin-left: 20px;
+}
+
+.problem_description {
+  color: black;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.Easy {
+  color: #078B7C;
+}
+
+.Medium {
+  color: #AD841C;
+}
+
+.Hard {
+  color: #E73357;
+}
+
+/* code_editor_section */
+.code_editor_section {
+  background: paleturquoise
+  
+}

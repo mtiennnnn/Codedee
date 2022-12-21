@@ -24,6 +24,7 @@
                     <hr class"solid"></hr>
                 </div>
             
+
                 <p class="log-reg-small">Username</p>
                 <input type="text" name="username" required="required">
         
@@ -37,7 +38,9 @@
 
         </div>
         <div class="col s8">
-            {% include 'pages/reg_log_background.html' %}
+            <div class="reg_log_background">
+                {% include 'pages/reg_log_background.html' %}
+            </div>
         </div>
     </div>
 {% endblock %}
