@@ -1,0 +1,43 @@
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-col">
+            <h4>About us</h4>
+            <ul>
+                <li><a href="{% url 'about' %}">Introduce</a></li>
+                <li><a href="#">Job opportunity</a></li>
+                <li><a href="#"></a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Support</h4>
+            <ul>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="{% url 'rules' %}">Rules</a></li>
+                <li><a href="#">Privacy</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <ul>
+                <li>Email: codeee@gmail.com</li>
+                <li>Phone: 00020521963</li>
+                <li>Phone: 00020522008</li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Follow us</h4>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+const footer = document.querySelector('.footer')
+console.log(footer.offsetHeight)
+footer.style.top = window.innerHeight + footer.offsetHeight + 'px'
+</script>
