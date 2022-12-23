@@ -104,6 +104,19 @@ def userProfile(request, username):
 
 @login_required(login_url="login")
 def problem_set(request):
+    user = User.objects.all().order_by('-points')
+    problem = Problem.objects.all().order_by('id')
+    context = {'users': user, 'problems': problem}
+    if request.GET.get('search')!= None:
+        path = request.GET.get('search')
+        if Problem.objects.filter(problemName = path).exists():        
+            path_problem = Problem.objects.get(problemName=path)
+            search = path_problem.id
+            url = '/problem/' + str(search)
+            return redirect(url)
+        else:
+            return redirect('/problem_set')
+    return render(request, 'pages/problem_set.html', context)
     user = User.objects.all().order_by("-points")
     problem = Problem.objects.all().order_by("id")
     context = {"users": user, "problems": problem}
