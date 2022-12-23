@@ -117,6 +117,10 @@ def problem_set(request):
         else:
             return redirect('/problem_set')
     return render(request, 'pages/problem_set.html', context)
+    user = User.objects.all().order_by("-points")
+    problem = Problem.objects.all().order_by("id")
+    context = {"users": user, "problems": problem}
+    return render(request, "pages/problem_set.html", context)
 
 
 @login_required(login_url="login")
