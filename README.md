@@ -50,7 +50,7 @@ You can change the bio and your avatar
 
 #### Coding area
 
-![image](https://user-images.githubusercontent.com/75429369/209456387-eccb4719-928b-4719-9d45-c00105519a76.png)
+![image](https://user-images.githubusercontent.com/75429369/209456556-579f3115-e838-455d-84e8-d2e369410e9a.png)
 
 ![image](https://user-images.githubusercontent.com/75429369/209456361-5c69480a-3041-4417-a1ca-083e25effc52.png)
 
