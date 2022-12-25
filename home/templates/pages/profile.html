@@ -36,7 +36,11 @@
                         <div class="card">
                             <div class="card-content white-text">
                               <span class="card-title">Problems solved</span>
-                              <p class="card-text">None</p>
+                              <p class="card-text">
+                                {% for solved_prob in user.solved_chall.all %}
+                                    <a style="color:black;" href="{% url 'problem' solved_prob.id %}">{{ solved_prob.problemName }}</a><br>
+                                {% endfor %}
+                              </p>
                             </div>
                        </div>
 

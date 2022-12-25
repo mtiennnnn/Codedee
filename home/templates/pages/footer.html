@@ -1,0 +1,39 @@
+
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-col">
+            <h4>About us</h4>
+            <ul>
+                <li><a href="{% url 'about' %}">Introduce</a></li>
+                <li><a href="#"></a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Support</h4>
+            <ul>
+                <li><a href="{% url 'rules' %}">Rules</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <ul>
+                <li>Email: codedee@codedee.com</li>
+                <li>Phone: 06969696969</li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Follow us</h4>
+            <div class="social-links">
+                <a href="https://www.facebook.com/m.tiennnnn/" target='_blank'>Tien</a>
+                <a href="https://www.facebook.com/tantai.nguyen.56481" target='_blank'>Tai</a>
+                <a href="https://www.facebook.com/neverbenobodybutmyself" target='_blank'>Thinh</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+const footer = document.querySelector('.footer')
+console.log(footer.offsetHeight)
+footer.style.top = window.innerHeight + footer.offsetHeight + 'px'
+</script>

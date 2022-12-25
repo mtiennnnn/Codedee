@@ -126,12 +126,16 @@ def problem_set(request):
 @login_required(login_url="login")
 def problemPage(request, id):
     problem = Problem.objects.filter(id=id)
+    prob = Problem.objects.get(id=id)
+    user = request.user
     # context = {'problems': problem}
-
     # code editor
     codeareadata = ""
     lang = ""
     output = ""
+    res = prob.result
+    noti = ""
+    #print(user.solved_chall.all())
     if request.method == "POST":
         codeareadata = request.POST["codearea"]
         lang = request.POST["languages"]
@@ -142,6 +146,17 @@ def problemPage(request, id):
                 exec(codeareadata)
                 sys.stdout = old_stdout
                 output = output.getvalue()
+                output = output.strip()
+                if output == res:
+                    if user.solved_chall.contains(prob):
+                        noti = "You have already solved the problem!"
+                    else:
+                        user.points += prob.points
+                        user.solved_chall.add(prob)
+                        user.save()
+
+                        noti = "Accepted"
+            
             elif lang == "php":
                 sys.stdout = open("file.php", "w")
                 print(codeareadata)
@@ -162,7 +177,29 @@ def problemPage(request, id):
                 sys.stdout.close()
 
                 os.system("g++ file.cpp -o thisiscpp")
-                output = os.popen("./thisiscpp").read()
+
+                sys.stdout = open("input.txt", "w")
+                print(prob.testcase)
+                sys.stdout.close()
+
+                sys.stdout = open("output.txt", "w")
+                print(os.popen("./thisiscpp < input.txt").read(), end='')
+                sys.stdout.close()
+                
+                file_output = open("output.txt", "r")
+                output = file_output.read()
+                output = output.strip()
+
+                if output == res:
+                    if user.solved_chall.contains(prob):
+                        noti = "You have already solved the problem!"
+                    else:
+                        user.points += prob.points
+                        user.solved_chall.add(prob)
+                        user.save()
+
+                        noti = "Accepted"
+    
             elif lang == "C":
                 sys.stdout = open("file.c", "w")
                 print(codeareadata)
@@ -172,11 +209,10 @@ def problemPage(request, id):
                 output = os.popen("./thisisc").read()
         except Exception as e:
             output = "Compile error!"
-
     return render(
         request,
         "pages/problem.html",
-        {"problems": problem, "code": codeareadata, "output": output},
+        {"problems": problem, "code": codeareadata, "output": output, "noti": noti},
     )
 
 

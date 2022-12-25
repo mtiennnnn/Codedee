@@ -15,6 +15,25 @@
                     <li class="problem_difficulty">{{ problems.difficulty }}</li>
                     <li class="problem_description">{{ problems.description | markdown | safe | linebreaks}}</li>
                 </ul>
+                <br><br><h4>Example</h4>
+                <table>
+                    <tr>
+                        <th style="color: black; font-size: 15px; font-family: Consolas;">Input</th>
+                    </tr>
+                    <tr>
+                        <td style="color: red; font-family: Consolas;">{{ problems.testcase }}</td>
+                    </tr>
+                </table>
+
+                <table>
+                    <tr>
+                        <th style="color: black; font-size: 15px; font-family: Consolas;">Output</th>
+                    </tr>
+                    <tr>
+                        <td style="color: red; font-family: Consolas;">{{ problems.result }}</td>
+                        <td> {{ noti }} </td>
+                    </tr>
+                </table>
             {% endfor %}
         </div>
         <div class="col s6">

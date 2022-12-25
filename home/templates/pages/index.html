@@ -5,6 +5,7 @@
     {% load static %}
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
     <link type="text/css" rel="stylesheet" href="{% static './css/materialize.css' %}"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="{% static './css/footer.css' %}"  media="screen,projection"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
     <title>{% block title %}{% endblock  %}</title>
@@ -29,6 +30,10 @@
       {% block main-container-content %}{% endblock %}
     </div>
   </div>
+  
+  {% block footer %}
+    {% include 'pages/footer.html' %}
+  {% endblock footer %}
         
   <script type="text/javascript" src="{% static './js/materialize.js' %}"></script>
 </body>

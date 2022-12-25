@@ -15,7 +15,7 @@
                     {% if not request.user.is_authenticated %}
                         <a href={% url 'register' %} class="waves-effect waves-light blue btn-large header-btn">Sign up now</a>
                     {% endif %}
-                    <a href="https://youtu.be/patU9yRgcnQ" target="_blank" class="waves-effect waves-light white blue-text btn-large header-btn border-btn">Challenge me</a>
+                    <a href="{% url 'problem_set' %}" target="_blank" class="waves-effect waves-light white blue-text btn-large header-btn border-btn">Code Now</a>
                 </div>
                 <div class="col s5">
                     <img class="header_image" src="https://i.imgur.com/s99uyOf.png"> <!-- hinh hack duoc tren mang -->

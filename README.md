@@ -19,6 +19,8 @@ Codedee (sounds like "Code đi" in Vietnamese) is a web-based coding platform us
 pip install -r requirements.txt
 ```
 
+Also you have to have `g++`, `gcc`, `node`, `php`
+
 2) Run
 
 ```python
