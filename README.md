@@ -54,6 +54,8 @@ You can change the bio and your avatar
 
 ![image](https://user-images.githubusercontent.com/75429369/209456361-5c69480a-3041-4417-a1ca-083e25effc52.png)
 
+_Right now you can only do the `test`, `Test challenge` and `sum` problems, because I'm a bit lazy to add test case for the rest xD_
+
 ## Discussion/Highlights/Issues
 
 **This is a very simple coding and online judge WebApp for my last term project so that it might contains some bugs and vulnerabilities as well. Please don't deploy it from your machine and give others to test, I won't take any responsibility for your loss.**
